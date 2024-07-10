@@ -1,0 +1,8 @@
+wrangler-local-state
+dist
+
+# wrangler files
+.wrangler
+.dev.vars
+
+node_modules/
