@@ -44,6 +44,25 @@ app.get('/', async c => {
 	);
 });
 
+app.get('/api/apps', async c => {
+	console.log('apps');
+	const resp = await c.env.DB.prepare(`SELECT * FROM [apps]`).all();
+	return c.json(resp.results);
+});
+
+
+app.get('/api/sessions', async c => {
+	console.log('apps');
+	const resp = await c.env.DB.prepare(`SELECT * FROM [sessions]`).all();
+	return c.json(resp.results);
+});
+
+app.get('/api/users', async c => {
+	console.log('apps');
+	const resp = await c.env.DB.prepare(`SELECT * FROM [users]`).all();
+	return c.json(resp.results);
+});
+
 app.get('/api/Category', async c => {
 	const resp = await c.env.DB.prepare(`SELECT * FROM [Category]`).all();
 	return c.json(resp.results);
